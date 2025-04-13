@@ -1,3 +1,5 @@
+import logger from "../logging/logger";
+
 class CustomError extends Error {
   constructor(message: string, public status?: number) {
     super(message);
@@ -5,8 +7,8 @@ class CustomError extends Error {
 }
 
 const createError = (message: string, status = 500) => {
-  console.log(message);
-  
+  logger.error(message);
+
   throw new CustomError(message, status);
 }
 

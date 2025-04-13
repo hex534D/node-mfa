@@ -6,7 +6,7 @@
  * @param {*} data
  * @returns {{ code: number; message: string; data: any; }}
  */
-const success = (statusCode: number, message: string, data: any) => {
+const success = (statusCode: number, message: string, data?: any) => {
   return {
     code: statusCode,
     message,
@@ -22,7 +22,7 @@ const success = (statusCode: number, message: string, data: any) => {
  * @param {*} error
  * @returns {{ code: number; message: string; error: any; }}
  */
-const error = (statusCode: number, message: string, error: any) => {
+const error = (statusCode: number, message: string, error?: any) => {
   if (!statusCode) statusCode = 500;
 
   return {
